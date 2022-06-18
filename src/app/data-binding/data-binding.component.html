@@ -1,0 +1,79 @@
+<h1> Data-binding feladatok</h1>
+<br><br>
+
+<!--Interpoláció // beszúrás-->
+<!--{{value}}-->
+<h3>{{interpolacio}}</h3>
+<h4>{{velemeny}}</h4>
+<h4>{{udvozles}}</h4>
+
+<hr>
+<!--Property Binding-->
+<!--[property]="value"-->
+<h3> 2.) Property binding, vagyis tulajdonság kötés</h3>
+<h4>2/a) Szöveghez rendelt tulajdonságok és link:</h4>
+<a [href]="utvonal">Részletes Angular tananyag!</a>
+
+<br>
+
+<h4>2/b) Képhez rendelt tulajdonságok és link:</h4>
+<a [href]="utvonal" [target]="celpont"><img [src]="keplink" [title]="kepfelirat" [alt]="kepfelirat" [width]="meret"
+    [height]="meret"></a>
+
+
+<hr>
+<!--Event Binding-->
+<!--(event)="event_handler"-->
+<!--(Mikor_fusson_le) = "Mi_fusson_le"-->
+<h3> 3.) Event binding - Avagy esemény kötés(hozzárendelés)</h3>
+<button type="button" (click)="message()">Message</button>
+
+
+<hr>
+<!--Two-way data binding-->
+<!-- [(ngModel)] -->
+<h3>4.) Two way data-binding</h3>
+<label for="aOldalValue">Az A oldal mérete: </label>
+<input [(ngModel)]="aOldal" type="number" id="sideA">
+<p>Az {{aOldal}} oldalú négyzet kerülete: {{aOldal*4}}</p>
+<p>Az {{aOldal}} oldalú négyzet területe: {{aOldal*aOldal}}</p>
+
+
+<hr><hr>
+<h2>Gyakorló feladatok - Angular alapok: </h2>
+
+<!--Első feladat: Név, team, szak kiíratása-->
+<h3>1.) Feladat - Név, team, szak kiíratása interpolációval</h3>
+<p>{{taskOneName}}, Team0{{taskOneTeam}}, {{taskOneCourse}}</p>
+<br>
+
+<!--Második feladat: Ruander honlapjának logója, kattintható verzióban-->
+<h3>2.) Feladat - Ruander honlapjának logója, kattintható verzióban</h3>
+<a [href]="pathToRuander" [target]="picTarget"><img [src]="picRuanderLink" [title]="picRuanderLabel"
+    [alt]="picRuanderLabel" [width]="picSize" [height]="picSize"></a>
+<br>
+
+<!--Harmadik Feladat: A Google logója, kattintható verzióban-->
+<h3>3.) Feladat: A Google logója, kattintható verzióban</h3>
+<a [href]="pathToGoogle" [target]="picTarget"><img [src]="picGoogleLink" [title]="picGoogleLabel" [alt]="picGoogleLabel"
+    [width]="picSize" [height]="picSize"></a>
+<br>
+
+<!--Negyedik feladat: Adatmódosító Event - Kattintásra módosítsa az oldal címsorát-->
+<h3>4.) Feladat: Adatmódosító event: Kattintásra módosul első feladat kurzus adata!</h3>
+<button type ="button" (click)="adatModosito()">Adamódosító gomb - Kattintásra módosul első feladat kurzus adata!</button>
+<br>
+
+<!--Ötödik Feladat: Random generáló - Kattintásra random értéket generál ki!-->
+<h3>5.) Feladat: Random szám generáló 0-100 között - Kattintásra random értéket generál ki!</h3>
+<button type="button" (click)="randomGen()">Random szám generátor gomb</button>
+<br>
+
+<!--Hatodik feladat: Téglalap kerülete és területe-->
+<h3>6.) Feladat: Téglalap kerülete és területe</h3>
+<label for="teglaA">Az "A" oldal mérete cm-ben: </label>
+<input [(ngModel)]="teglaA" type="number" id="Ategla"><br>
+<label for="teglaB">A "B" oldal mérete cm-ben: </label>
+<input [(ngModel)]="teglaB" type="number" id="Btegla">
+<p>A(z) {{teglaA}} és {{teglaB}} cm oldalú téglalap kerülete: {{teglaA*2 + teglaB*2 }} cm</p>
+<p>A(z) {{teglaA}} és {{teglaB}} cm oldalú téglalap területe: {{teglaA*teglaB}} cm</p>
